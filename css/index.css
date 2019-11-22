@@ -1,3 +1,59 @@
+/* Variables LESS Document */
+@font-face {
+  font-family: 'Eagle Lake';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Eagle Lake'), local('EagleLake-Regular'), url(https://fonts.gstatic.com/s/eaglelake/v7/ptRMTiqbbuNJDOiKj9wG1On4LQ.ttf) format('truetype');
+}
+/* Mixins LESS Document */
+.flex-rwrap {
+  display: flex;
+  flex-flow: row wrap;
+}
+.flex-rnowrap {
+  display: flex;
+  flex-flow: row nowrap;
+}
+.flex-cwrap {
+  display: flex;
+  flex-flow: column wrap;
+}
+.flex-cnowrap {
+  display: flex;
+  flex-flow: column nowrap;
+}
+.sideBySide {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 0;
+  width: 100%;
+}
+@media (max-width: 500px) {
+  .sideBySide {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+  }
+}
+.insideBySide {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 47%;
+}
+@media (max-width: 500px) {
+  .insideBySide {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+}
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -126,6 +182,7 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+/* General Styles LESS Document */
 /* Set every element's box-sizing to border-box */
 * {
   box-sizing: border-box;
@@ -135,33 +192,249 @@ body {
   height: 100%;
   font-size: 62.5%;
   /* =10px */
+  width: 90%;
+  margin: 0 auto;
 }
-body {
-  margin: 10px;
+.body {
+  width: 90%;
+  margin: 0 auto;
 }
-.header {
+h1 {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  font-size: 3rem;
+  font-weight: bolder;
+  color: purple;
+  padding: 0 0 10px 0;
+  text-shadow: 4px 4px 4px #aaa;
+}
+h2 {
+  display: flex;
+  font-size: 2rem;
+  font-weight: bolder;
+  color: purple;
+  padding: 0 0 10px 0;
+  text-shadow: 4px 4px 4px #aaa;
+}
+h3 {
+  display: flex;
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: purple;
+  padding: 0 0 5px 0;
+}
+h4 {
+  display: flex;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: purple;
+  padding: 0 0 10px 0;
+}
+p {
+  font-size: 1.2rem;
+}
+ul {
+  margin: 0 0 10px 0;
+  display: flex;
+  flex-flow: column nowrap;
+  align-content: flex-start;
+  font-size: 1rem;
+  list-style-type: disc;
+  list-style-position: inside;
+  padding: 10px;
+}
+ul li {
+  margin: 5px;
+}
+hr {
+  margin: 20px 0;
+  border: 4px solid purple;
+}
+/* Header LESS Document */
+header {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
+  background-image: url("../images/Sara-1-3.jpg");
+  background-repeat: no-repeat;
+  width: auto;
+  height: auto;
+  margin: 0 0 20px;
+  max-height: 323px;
 }
-.basic-info {
+@media (max-width: 500px) {
+  header {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+}
+header .name {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  height: auto;
+  width: auto;
+  margin: 0 10%;
+}
+header .name h1 {
+  font-size: 5rem;
+  font-weight: bolder;
+  color: white;
+  font-family: "Eagle Lake", cursive;
+}
+@media (max-width: 500px) {
+  header .name h1 {
+    font-size: 3rem;
+  }
+}
+header .name h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  font-family: "Eagle Lake", cursive;
+}
+@media (max-width: 500px) {
+  header .name h2 {
+    font-size: 2rem;
+  }
+}
+/* Call To Action LESS Document */
+nav {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-end;
+  align-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+@media (max-width: 500px) {
+  nav {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-content: flex-end;
+    align-items: flex-end;
+  }
+}
+nav a {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-end;
+  align-content: space-around;
+  text-decoration: none;
+  font-size: 1.2rem;
+  border: 2px solid purple;
+  border-radius: 10px;
+  color: aquamarine;
+  background: purple;
+  padding: 10px 20px;
+  margin: 5%;
+  width: 100%;
+}
+nav a:hover {
+  background: #1a001a;
+}
+@media (max-width: 500px) {
+  nav a {
+    padding: 2.5px 5px;
+    width: 90%;
+    font-size: 1rem;
+    margin: 0 auto;
+    justify-content: space-between;
+  }
+}
+/* Main Content LESS Document */
+#introText {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  margin: 0 10%;
+  font-size: 1.5rem;
+}
+@media (max-width: 500px) {
+  #introText {
+    font-size: 1rem;
+  }
+}
+.work {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  align-content: space-between;
-  margin: 0 2%;
-  width: auto;
-  border: 2px solid red;
+  align-items: flex-start;
+  margin: 0;
+  width: 100%;
 }
-.contact {
+@media (max-width: 500px) {
+  .work {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+  }
+}
+h2 {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.position {
   display: flex;
   flex-flow: column wrap;
   justify-content: flex-start;
-  align-content: center;
   align-items: flex-start;
+  width: 47%;
+}
+@media (max-width: 500px) {
+  .position {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+}
+.skills {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 0;
+  width: 100%;
+}
+@media (max-width: 500px) {
+  .skills {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+  }
+}
+.skillset {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 47%;
+}
+@media (max-width: 500px) {
+  .skillset {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+}
+/* Contact LESS Document */
+.contact {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
   background-color: purple;
-  margin: 0 2%;
-  width: auto;
+  margin: 0;
+  width: 100%;
   padding: 10px;
   border-top: 4px solid aquamarine;
   /* rgba(94,25,221,1.00); */
@@ -169,64 +442,65 @@ body {
   /* rgba(94,25,221,1.00); */
   color: #ffffff;
 }
-.contact .header-img {
-  display: flex;
-  height: 150px;
-  width: auto;
-  justify-content: center;
-  margin-bottom: 10px;
-}
-.contact div {
+.contact .bottom {
   display: flex;
   flex-flow: column wrap;
-  justify-content: space-between;
-  padding-bottom: 20px;
+  justify-content: center;
+  align-items: flex-start;
+  width: 90%;
+  margin: 2%;
 }
-.contact div h3 {
+.contact .bottom .header-img {
+  display: flex;
+  height: 200px;
+  width: auto;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+.contact .bottom .c_img {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-content: center;
+  width: auto;
+}
+.contact .bottom .c_info {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.contact .bottom h3 {
   font-size: 1.25rem;
   font-weight: strong;
   justify-content: flex-start;
   padding-bottom: 10px;
+  color: white;
 }
-.contact div a {
+.contact .bottom a {
   text-decoration: none;
   color: white;
 }
-.contact div a:hover {
-  color: thistle;
+.contact .bottom a:hover {
+  color: chartreuse;
+  font-weight: bold;
 }
-.contact div p {
+.contact .bottom p {
   font-size: 1rem;
-}
-.header-info {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: flex-start;
-  align-content: center;
-  align-items: center;
-  margin: 0 2%;
-  width: auto;
   padding-bottom: 10px;
-  border-bottom: 2px solid purple;
 }
-.header-info h1 {
+/* Footer LESS Document */
+footer {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
-  font-size: 3rem;
-  font-weight: strong;
-}
-.header-info h2 {
-  display: flex;
-  font-size: 2rem;
-  font-weight: strong;
-}
-.header-info .intro {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-start;
-  padding-top: 20px;
-}
-.header-info .intro p {
-  font-size: 1.5rem;
+  background: purple;
+  color: white;
+  font-style: italic;
+  border-left: 4px solid aquamarine;
+  /* rgba(94,25,221,1.00); */
 }
