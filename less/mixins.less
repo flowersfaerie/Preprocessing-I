@@ -1,0 +1,49 @@
+/* Mixins LESS Document */
+
+// Display Flex Mixin
+.flex-rwrap {
+	display: flex;
+	flex-flow: row wrap;
+}
+
+.flex-rnowrap {
+	display: flex;
+	flex-flow: row nowrap;
+}
+
+.flex-cwrap {
+	display: flex;
+	flex-flow: column wrap;
+}
+
+.flex-cnowrap {
+	display: flex;
+	flex-flow: column nowrap;
+}
+
+.sideBySide {
+	.flex-rwrap;
+	justify-content: space-between;
+	align-items: flex-start;
+	margin: 0;
+	width: 100%;
+	
+	@media (max-width: 500px) {
+		.flex-cnowrap;
+		align-items: center;
+	}
+}
+
+.insideBySide {
+	.flex-cwrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+	width: 47%;
+	
+	@media (max-width: 500px) {
+		.flex-cnowrap;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+	}
+}
